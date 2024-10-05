@@ -1,0 +1,19 @@
+node ('PHP-10.0.0.150-slave01') {
+  stage ('git拉取代码') {
+      checkout scmGit(branches: [[name: '${branch}']], extensions: [], 
+      userRemoteConfigs: [[credentialsId: '5c489303-5080-4eb9-9dc9-07d751f5b66e',
+      url: 'git@github.com:sun-tianle/jenkins.git']])
+  }
+  stage ('Maven打包') {
+      echo "321"
+    
+  }
+  stage ('depioy') {
+      echo "456"
+  
+  }
+  stage ('test') {
+      echo "789"
+      
+  }
+}
